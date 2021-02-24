@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './calculadora.css';
 import { Jumbotron, Container, Row, Col, Button, Form } from 'react-bootstrap';
 
 function Calculadora() {
+
+  const [txtNumeros, setTxtNumeros] = useState('0')
+  
   return (
     <Jumbotron style={{
       background: 'transparent !important',
@@ -17,7 +20,12 @@ function Calculadora() {
             <Button variant='danger'>C</Button>
           </Col>
           <Col xs="9">
-            <Form.Control type='text' name='textNumeros' class='text-right' readOnly='readonly' />
+            <Form.Control 
+              type='text' 
+              name='textNumeros' 
+              className='text-right' 
+              readOnly='readonly' 
+              value={txtNumeros}/>
           </Col>
         </Row>
         <Row>
