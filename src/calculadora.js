@@ -4,15 +4,15 @@ import { Jumbotron, Container, Row, Col, Button, Form } from 'react-bootstrap';
 
 function Calculadora() {
 
-  const [txtNumeros, setTxtNumeros] = useState('0')
+  const [txtNumbers, setTxtNumbers] = useState('0')
 
-  function addNumber(numero) {
-    setTxtNumeros(txtNumeros + numero)
+  function addNumber(number) {
+    setTxtNumbers(txtNumbers + number)
   }
-  // função que concatena os números digitados e exibe no campo input da calculadora
+  // função que concatena os números digitados (number) e exibe no campo input (txtNumeros)
 
   function defineOperation(op) {
-    setTxtNumeros(op)
+    setTxtNumbers(op)
   }
   // função que pega os operadores (+, -, / e *)
   
@@ -32,15 +32,15 @@ function Calculadora() {
           <Col xs="9">
             <Form.Control 
               type='text' 
-              name='textNumeros' 
+              name='textNumbers' 
               className='text-right' 
               readOnly='readonly' 
-              value={txtNumeros}/>
+              value={txtNumbers}/>
           </Col>
         </Row>
         <Row>
           <Col>
-            <Button variant='light' onClick={() => addNumber('7')}>7</Button>
+            <Button variant='light' value='7' onClick={() => addNumbergi}>7</Button>
           </Col>
           <Col>
             <Button variant='light' onClick={() => addNumber('8')}>8</Button>
