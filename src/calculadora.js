@@ -40,7 +40,7 @@ function Calculadora() {
         </Row>
         <Row>
           <Col>
-            <Button variant='light' value='7' onClick={() => addNumbergi}>7</Button>
+            <Button variant='light' value='7' onClick={() => addNumber('7')}>7</Button>
           </Col>
           <Col>
             <Button variant='light' onClick={() => addNumber('8')}>8</Button>
