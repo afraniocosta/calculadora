@@ -2,7 +2,8 @@ function CalculadoraService() {
 
     const SOMA = '+';    
     const SUBTRACAO = '+';    
-    const DIVISAO = '+';    
+    const DIVISAO = '+';  
+    const MULTIPLICACAO = '*';    
 
     function calcular(number1, number2, operation) {
         let resultado;
@@ -16,13 +17,43 @@ function CalculadoraService() {
                 break;   
             case DIVISAO:
                 resultado = number1 / number2;
-                break;        
+                break;   
+            case MULTIPLICACAO:
+                resultado = number1 * number2;
+                break;       
+            default:
+                resultado = 0;
         }
         return resultado;
     }
+
+    function concatenateNumber(currentNum, concatNum) {
+        // caso contenha apenas '0' ou null, retorna o valor
+        if(currentNum === '0' || currentNum === null) {
+            currentNum = '';
+        }
+
+        // primeiro dígito for '.', concatena '0' antes do ponto
+        if(concatNum === '.' || concatNum === '') {
+            return '0.';
+        }     
+
+        // caso '.' digitado e já contenha um ponto, apenas retornar
+        if(concatNum === '.' && currentNum.indexOff('.') > -1) {
+            return currentNum;
+        }
+
+        return currentNum + concatNum;
+
+    }
+
     return[
         calcular,
-        SOMA
+        concatenateNumber,
+        SOMA,
+        SUBTRACAO,
+        DIVISAO,
+        MULTIPLICACAO
     ];
 }
 
